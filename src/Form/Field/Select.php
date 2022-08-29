@@ -313,12 +313,12 @@ EOT;
      *
      * @return $this
      */
-    public function ajax($url, $idField = 'id', $textField = 'text')
+    public function ajax($url, $idField = 'id', $textField = 'text',$min = 1)
     {
         $configs = array_merge([
             'allowClear'         => true,
             'placeholder'        => $this->label,
-            'minimumInputLength' => 1,
+            'minimumInputLength' => $min,
         ], $this->config);
 
         $configs = json_encode($configs);
